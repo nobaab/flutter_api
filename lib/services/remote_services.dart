@@ -1,3 +1,4 @@
+import '../models/images.dart';
 import '../models/post.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,6 +24,18 @@ class UserService {
     if (response.statusCode == 200) {
       var json = response.body;
       return userFromJson(json);
+    }
+  }
+}
+
+class ImageService {
+  Future<List<Images>?> getImages() async {
+    var client = http.Client();
+    var uri = Uri.parse('https://jsonplaceholder.typicode.com/photos/');
+    var response = await client.get(uri);
+    if (response.statusCode == 200) {
+      var json = response.body;
+      return imagesFromJson(json);
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_api/views/photos.dart';
 import 'package:flutter_api/views/posts.dart';
 import 'package:flutter_api/views/users.dart';
 
@@ -52,11 +53,11 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const UsersPage()),
+                MaterialPageRoute(builder: (context) => const ImagePage()),
               );
             },
             child: const Text(
-              'POST API',
+              'IMAGE API',
               style: TextStyle(fontSize: 20),
             ),
           ),
